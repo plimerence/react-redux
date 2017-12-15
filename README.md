@@ -5,7 +5,7 @@
 [connect.js实现](https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e)
 react-redux的核心我感觉就是connect函数，
 connect函数大致实现是这个样子
-`function connect(mapStateToProps, mapDispatchToProps) {
+```function connect(mapStateToProps, mapDispatchToProps) {
   return function (WrappedComponent) {
     return class extends React.Component {
       render() {
@@ -28,7 +28,7 @@ connect函数大致实现是这个样子
       }
     }
   }
-}` 
+}```
 从这个函数`connect(mapStateToProps,mapDispatchToProps)(WrappedComponent)`可以看出  connect函数接收的mapStateToProps,mapDispatchToProps参数在组件内部被调用,然后mapStateToProps就是选出自己关心的state然后进行订阅操作，当自己关心的state发生变化时，强制刷新UI，mapStateToProps,mapDispatchToProps处理过后的会跟props合并。
 
 #关于store
